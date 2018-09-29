@@ -1,5 +1,10 @@
-const express = reqire('express');
-const morgan = reqire('morgan');
+const express = require('express');
+const morgan = require('morgan');
+const mongoose = require('mongoose');
+
+mongoose.connect('mongodb://localhost/vidley')
+    .then(()=>console.log('Connected to the databse'))
+    .catch(err=>consle.log('Error connescting the Database'))
 
 //importing routes
 const generes =  require('./routes/generes');
